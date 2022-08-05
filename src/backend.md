@@ -35,7 +35,9 @@ type config = {
       // 跨域配置，若值为 “*” 则允许所有请求，传入 string[] 则仅允许数组内的 host
       // 示例输入：["http://127.0.0.1:5741"]
       // 注意，协议/域名/IP/端口必须完全相同才能放行
-      origin: string[] | "*"
+      origin: string[] | "*",
+      // 后端监听的端口
+      port: number
 }
 
 interface CA {
