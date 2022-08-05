@@ -15,6 +15,7 @@ module.exports = {
         },
     },
     theme: defaultTheme({
+        sidebarDepth: 1,
         locales: {
             '/': {
                 navbar: [
@@ -24,7 +25,7 @@ module.exports = {
                 selectLanguageText: '选择语言',
                 selectLanguageAriaLabel: '选择语言',
                 sidebar: [
-                    { text: '现在开始', link: '/start.html' },
+                    { text: '现在开始', link: '/' },
                     { text: 'CA 配置', link: '/ca.html' },
                     { text: '后端部署', link: '/backend.html' },
                     { text: '前端部署', link: '/frontend.html' }
@@ -36,7 +37,7 @@ module.exports = {
                 ],
                 selectLanguageName: 'English',
                 sidebar: [
-                    { text: 'Get started', link: '/en/start.html' },
+                    { text: 'Getting started', link: '/en/' },
                     { text: 'CA Configuration', link: '/en/ca.html' },
                     { text: 'Backend Deploy', link: '/en/backend.html' },
                     { text: 'Frontend Deploy', link: '/en/frontend.html' }
