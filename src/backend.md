@@ -8,7 +8,7 @@
 git clone https://github.com/JustSignSSL/backend
 ```
 
-然后您需要将在 [CA 配置](ca.md) 章节中生成的中间 CA 文件夹复制到 `backend/src/CA` 中，CA 文件夹中的文件结构应该是类似这样的：
+然后您需要将在 [CA 配置](ca.md) 章节中生成的中间 CA 文件夹复制到 `backend/CA` 中，CA 文件夹中的文件结构应该是类似这样的：
 
 ```plaintext
 ├─CA
@@ -21,6 +21,8 @@ git clone https://github.com/JustSignSSL/backend
 │  │  ├─private
 │  │  └─powerca.cnf
 ```
+
+之后创建在 `backend` 下创建 `tmp` 目录。
 
 然后将 `backend/src/config.json.example` 后缀中的 `.example` 移除，将他视作 json 文件编辑。
 
