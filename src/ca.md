@@ -308,7 +308,7 @@ CPS.1 = https://pki.iks.moe/CPS/CURLCA
 
 在 `tlsdv`, `tlsov` 和 `tlsev`三个目录下建立 `certs`, `db`, `private` 和 `newcerts` 四个目录；在 `tlsdv`, `tlsov` 和 `tlsev`三个目录的 `db` 目录下建立空白文件 `index`；分别进入 `tlsdv`, `tlsov` 和 `tlsev`三个目录，执行 `openssl rand -hex 16 > db/serial && echo "unique_subject = no" > db/index.attr` 命令。
 
-分别进入 `tlsdv`, `tlsov` 和 `tlsev`三个目录，执行 `openssl genrsa -out private/rootca.key.pem 4096` 创建中间 CA 的私钥。
+分别进入 `tlsdv`, `tlsov` 和 `tlsev`三个目录，执行 `openssl genrsa -out private/powerca.key.pem 4096` 创建中间 CA 的私钥。
 
 分别进入 `tlsdv`, `tlsov` 和 `tlsev`三个目录，执行以下命令（请一次性复制并粘贴）以创建中间 CA 的证书签名请求 (CSR)：
 
