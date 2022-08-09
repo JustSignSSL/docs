@@ -14,7 +14,7 @@ JustSignSSL 在 Node.js 16 上工作得更好，如果您还没有安装 Node.js
 curl -fsSL <https://get.pnpm.io/install.sh> | sh -
 ```
 
-在 Windows 下（使用PowerShell）：
+在 Windows 下（使用 Windows PowerShell）：
 
 ```shell
 iwr <https://get.pnpm.io/install.ps1> -useb | iex
@@ -22,7 +22,7 @@ iwr <https://get.pnpm.io/install.ps1> -useb | iex
 
 安装完毕后，可以使用 `pnpm -v` 来检查 pnpm 是否正确安装到了服务器上。
 
-然后就可以使用以下命令安装 Node.js 16：
+后续即可使用以下命令安装 Node.js 16：
 
 ```shell
 pnpm env use --global 16
@@ -30,8 +30,6 @@ pnpm env use --global 16
 
 ## 安装 OpenSSL
 
-如果您使用的是 POSIX 系统，OpenSSL 应该已经好好的安装在了您的系统里了，如果不是（比如 Windows），则需要自行安装。
-
-Windows 用户请 [在此](https://indy.fulgan.com/SSL/) 根据处理器架构选择软件包，一般来讲，在 PC 和服务器上选择 `openssl-xxx-x64_86-win64.zip` 为最佳。
+OpenSSL 为 POSIX 系统的标准预装组件，一般无需再次安装；对于 Windows 系统，请 [在此](https://indy.fulgan.com/SSL/) 根据处理器架构选择软件包，一般而言，在 PC 和服务器上选择 `openssl-xxx-x64_86-win64.zip` 为最佳。
 
 您可以在 [OpenSSL 官方 Wiki](https://wiki.openssl.org/index.php/Binaries) 查找当前系统可用的 OpenSSL 软件包。

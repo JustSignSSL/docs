@@ -2,7 +2,7 @@
 
 ## 配置
 
-首先您需要将项目 clone 到本地：
+首先您需要将前端源代码 clone 到本地：
 
 ```shell
 git clone https://github.com/JustSignSSL/frontend
@@ -10,7 +10,7 @@ git clone https://github.com/JustSignSSL/frontend
 
 同样的，将 `frontend/config.json.example` 后缀中的 `.example` 移除。
 
-config.json 的类型定义如下：
+`config.json` 的类型定义如下：
 
 ```ts
 interface config {
@@ -48,8 +48,8 @@ pnpm build
 
 构建产物会输出到 `工程文件夹/dist` 中，将 dist 文件夹下的所有文件放到您 http 服务器的网站目录中即可完成部署。
 
-### Sass
+### SaSS
 
-JustSignSSL 的前端页面是完全静态的，这意味着它可以部署到任何地方，我们更推荐的做法是，上传整个前端工程文件夹到 Github 私有仓库，部署到 Vercel、Cloudflare Pages、Netlify 这种网站托管平台，来完整地享受前端工程化的便利。
+JustSignSSL 的前端页面是完全静态的，这意味着它可以部署到任何地方，我们更推荐的做法是，上传整个前端工程文件夹到 Github 私有仓库，部署到 Vercel, Cloudflare Pages, Netlify 等网站托管平台，以完整地享受前端工程化带来的便利。
 
-这里不做赘述，如果您不熟悉这种方式，建议您选择其他方式部署。
+关于 SaSS 的部署，本文档不做赘述，如果您不熟悉这种方式，建议您参考相关文档或选择其他方式部署。

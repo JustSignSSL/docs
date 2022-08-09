@@ -109,12 +109,23 @@ crlDistributionPoints = URI:http://pki.iks.moe/static/crl/CURLRootCA.crl
 
 CPS.1 = https://pki.iks.moe/CPS/CURLCA
 ```
+|字段|对应|示例|说明|
+|:--|:-:|:-:|:-:|
+|`countryName`|国家和地区名|`CN`|需要为 ISO3166 开列的二位代码之一，必填|
+|`stateOrProvinceName`|州或省名|`四川` 或 `Sichuan`|选填|
+|`localityName`|地区名|`成都` 或 `Chengdu`|选填|
+|`organizationName`|组织名称|`Urban Readjustment Limited` 或 `成都城调有限公司`|必填|
+|`organizationalUnitName`|组织单位名称|`Root CA - R1` 或 `编号为壹的使用罗纳德、阿迪和伦纳德加密算法的根证书颁发机构的运行维护部`|字面意思为组织内部的单位的名称，选填|
+|`commonName`|通用名称|`CURL Root CA` 或 `成都城调有限公司根证书颁发机构`|会直接显示在证书的“颁发者”一栏，一般建议格式为“公司名称”和 Root CA，必填|
 
-`countryName` 为国家和地区名，需要为 ISO3166 开列的二位代码之一，例如 `CN`，必填；`stateOrProvinceName` 为一级常设行政区（州、邦、省、自治共和国、自治区、直辖区等）之名称，例如 `四川` 或 `Sichuan`，选填；`localityName` 为二级常设行政区（市、区）之名称，例如 `成都` 或 `Chengdu`，选填；`organizationName` 为组织的名称，例如 `Urban Readjustment Limited` 或 `成都城调有限公司`，必填；`organizationalUnitName` 字面意思为组织内部的单位的名称，例如 `Root CA - R1` 或 `编号为壹的使用罗纳德、阿迪和伦纳德加密算法的根证书颁发机构的运行维护部`，选填；`commonName` 为证书的通用名称，会直接显示在证书的“颁发者”一栏，一般建议格式为“公司名称”和 Root CA，例如 `CURL Root CA` 或 `成都城调有限公司根证书颁发机构`，必填。
+|位置|内容|替换说明|
+|:-|:-|:-:|
+|`authorityInfoAccess`|`http://ocsp.iks.moe`|您自己的 OCSP 响应地址|
+|`authorityInfoAccess`|`http://pki.iks.moe/static/cert/CURLRootCA.crt`|您自己的根 CA 证书分发地址|
+|`crlDistributionPoints`|`http://pki.iks.moe/static/crl/CURLRootCA.crl`|您自己的根 CA 证书吊销列表分发地址|
+|`CPS.1`|`https://pki.iks.moe/CPS/CURLCA`|您自己的 CA 系统的存储库地址|
 
-`authorityInfoAccess` 中，`http://ocsp.iks.moe` 请替换为您自己的 OCSP 响应地址，`http://pki.iks.moe/static/cert/CURLRootCA.crt` 请替换为您自己的根 CA 证书分发地址；`crlDistributionPoints` 中，`http://pki.iks.moe/static/crl/CURLRootCA.crl` 请替换为您自己的根 CA 证书吊销列表分发地址。此三项的协议头不得为 `https`。
-
-`CPS.1` 中，`https://pki.iks.moe/CPS/CURLCA` 请替换为您自己的 CA 系统的存储库地址。
+前三项的协议头不得为 `https`。
 
 因非 ASCII 字符在不同硬件架构、不同操作系统、不同编程语言、不同应用程序甚至是应用程序的不同版本上的兼容性不尽完美，此处笔者建议上述内容均应翻译为**英文**填入。
 
@@ -298,11 +309,21 @@ CPS.1 = https://pki.iks.moe/CPS/CURLCA
 
 注意第 5 行的 `dir`。
 
-`countryName` 为国家和地区名，需要为 ISO3166 开列的二位代码之一，例如 `CN`，必填；`organizationName` 为组织的名称，例如 `Urban Readjustment Limited` 或 `成都城调有限公司`，必填；`commonName` 为证书的通用名称，会直接显示在证书的“颁发者”一栏，一般建议格式为“公司名称”和"认证级别" CA，例如 `CURL Extended Validation Server CA - R1` 或 `成都城调有限公司编号为壹的使用罗纳德、阿迪和伦纳德加密算法的服务器用扩展认证证书颁发机构`，必填。
+|字段|对应|示例|说明|
+|:--|:-:|:-:|:-:|
+|`countryName`|国家和地区名|`CN`|需要为 ISO3166 开列的二位代码之一，必填|
+|`organizationName`|组织名称|`Urban Readjustment Limited` 或 `成都城调有限公司`|必填|
+|`commonName`|通用名称|`CURL Extended Validation Server CA - R1` 或 `成都城调有限公司编号为壹的使用罗纳德、阿迪和伦纳德加密算法的服务器用扩展认证证书颁发机构`|会直接显示在证书的“颁发者”一栏，一般建议格式为“公司名称”和"认证级别" CA，必填|
 
-`authorityInfoAccess` 中，`http://ocsp.iks.moe` 请替换为您自己的 OCSP 响应地址，`http://pki.iks.moe/static/cert/CURLExtendedValidationServerCAR1.crt` 请替换为您自己的中间 CA 证书分发地址；`crlDistributionPoints` 中，`http://pki.iks.moe/static/crl/CURLExtendedValidationServerCAR1.crl` 请替换为您自己的中间 CA 证书吊销列表分发地址。此三项的协议头不得为 `https`。
+|位置|内容|替换说明|
+|:-|:-|:-:|
+|`authorityInfoAccess`|`http://ocsp.iks.moe`|您自己的 OCSP 响应地址|
+|`authorityInfoAccess`|`http://pki.iks.moe/static/cert/CURLExtendedValidationServerCAR1.crt`|您自己的中间 CA 证书分发地址|
+|`crlDistributionPoints`|`http://pki.iks.moe/static/crl/CURLExtendedValidationServerCAR1.crl`|您自己的中间 CA 证书吊销列表分发地址|
+|`policyIdentifier`|`114514.2.1`|您喜欢的数字，不要超过 16 位数|
+|`CPS.1`|`https://pki.iks.moe/CPS/CURLCA`|您自己的 CA 系统的存储库地址|
 
-`policyIdentifier` 中，`114514.2.1` 请替换为您喜欢的数字，不要超过 16 位数；`CPS.1` 中，`https://pki.iks.moe/CPS/CURLCA` 请替换为您自己的 CA 系统的存储库地址。
+前三项的协议头不得为 `https`。
 
 因非 ASCII 字符在不同硬件架构、不同操作系统、不同编程语言、不同应用程序甚至是应用程序的不同版本上的兼容性不尽完美，此处笔者建议上述内容均应翻译为**英文**填入。
 
