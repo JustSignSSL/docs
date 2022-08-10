@@ -72,14 +72,14 @@ subjectKeyIdentifier = hash
 authorityKeyIdentifier = keyid,issuer
 basicConstraints = critical, CA:true, pathlen:0
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
-authorityInfoAccess = OCSP;URI:http://pki.iks.moe/ocsp, caIssuers;URI:http://pki.iks.moe/static/cert/YoungdoRootCA.crt
+authorityInfoAccess = OCSP;URI:http://pki.iks.moe/ocsp, caIssuers;URI:http://pki.iks.moe/static/cert/CURLRootCA.crt
 certificatePolicies = ia5org, @pl_section
-crlDistributionPoints = URI:http://pki.iks.moe/static/crl/YoungdoRootCA.crl
+crlDistributionPoints = URI:http://pki.iks.moe/static/crl/CURLRootCA.crl
 extendedKeyUsage = serverAuth, clientAuth
 
 [ pl_section ]
 policyIdentifier = "X509v3 Any Policy"
-CPS.1 = https://pki.iks.moe/CPS/YoungdoTrustServices
+CPS.1 = https://pki.iks.moe/CPS/CURLCA
 
 [ crl_ext ]
 authorityKeyIdentifier=keyid:always
@@ -223,7 +223,7 @@ authorityKeyIdentifier=keyid,issuer
 
 [ pl_section ]
 policyIdentifier = 2.16.840.1.114514.2.1
-CPS.1 = https://pki.iks.moe/CPS/YoungdoTrustServices
+CPS.1 = https://pki.iks.moe/CPS/CURLCA
 ```
 
 `[ policy_loose ]` 和 `[ server_cert ]` 根据认证级别的不同而有不尽相同的内容。其中，EV 应当填写以下内容：
