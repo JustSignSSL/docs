@@ -21,7 +21,9 @@ interface config {
         EV: string[]
     },
     // 后端反代或部署的地址
-    backend: string
+    backend: string,
+    // 在网页底部插入的文字，支持 HTML
+    footer: string,
 }
 ```
 
