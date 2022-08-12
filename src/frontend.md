@@ -50,6 +50,22 @@ pnpm build
 
 构建产物会输出到 `工程文件夹/dist` 中，将 dist 文件夹下的所有文件放到您 http 服务器的网站目录中即可完成部署。
 
+#### 内存溢出
+
+如果您在构建时遇到 `FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory` 错误，则需要设置 Node.js 的最大可分配内存：
+
+在 Posix 系统：
+
+```shell
+export NODE_OPTIONS='--max-old-space-size=2048'
+```
+
+在 Windows 系统：
+
+```powershell
+set NODE_OPTIONS='--max-old-space-size=2048'
+```
+
 ### SaSS
 
 JustSignSSL 的前端页面是完全静态的，这意味着它可以部署到任何地方，我们更推荐的做法是，上传整个前端工程文件夹到 Github 私有仓库，部署到 Vercel, Cloudflare Pages, Netlify 等网站托管平台，以完整地享受前端工程化带来的便利。
